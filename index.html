@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>40 Years of Bhargavi — Countless Lessons. Endless Gratitude.</title>
+<meta name="description" content="A cinematic love letter to forty years of Bhargavi — told in seven chapters." />
+<meta property="og:title" content="40 Years of Bhargavi" />
+<meta property="og:description" content="Join the celebration on 1 August at Rawla Lohgarh — a life told in seven chapters." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf7f0; --blush:#f6dcd0; --coral:#f17f63; --coral-deep:#c45a44;
+    --gold:#c9a86a; --gold-soft:#e8d4a8; --ink:#2a1a18; --ink-soft:#5a4340;
+    --border:#e6d8cc;
+    --serif:"Instrument Serif","Cormorant Garamond",Georgia,serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --hand:"Caveat",cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic}
+  h1,h2,h3,h4{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+  h1 em,h2 em,h3 em,h4 em{font-family:inherit;font-style:italic}
+  ::selection{background:var(--coral);color:var(--cream)}
+  .serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+  .hand{font-family:var(--hand)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+
+  /* grain */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* top bar */
+  .topbar{position:fixed;inset:0 0 auto 0;z-index:30;color:var(--cream)}
+  .topbar .inner{display:flex;justify-content:space-between;align-items:center;padding:24px 24px;max-width:1400px;margin:0 auto}
+  .topbar .mid{display:none;font-size:11px;text-transform:uppercase;letter-spacing:.35em}
+  .topbar .inner>span:first-child,
+  .topbar .inner>span:last-child{color:#75dfe5;text-shadow:0 1px 10px rgba(42,26,24,.22);transition:color .35s ease,text-shadow .35s ease}
+  .topbar.past-hero .inner>span:first-child,
+  .topbar.past-hero .inner>span:last-child{color:#17100f;text-shadow:none}
+  @media(min-width:768px){.topbar .mid{display:block}.topbar .inner{padding:24px 40px}}
+
+  /* chapter nav */
+  .chapnav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:40;display:none}
+  @media(min-width:1024px){.chapnav{display:block}}
+  .chapnav ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .chapnav a{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+  .chapnav .lbl{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--ink-soft);opacity:0;transform:translateX(-8px);transition:.4s}
+  .chapnav a:hover .lbl{opacity:.8;transform:translateX(0)}
+  .chapnav a.active .lbl{opacity:1;transform:translateX(0);color:var(--coral-deep)}
+  .chapnav .bar{display:block;width:16px;height:1px;background:rgba(90,67,64,.35);transition:.4s}
+  .chapnav a.active .bar{width:32px;background:var(--coral-deep)}
+
+  /* hero */
+  .hero{position:relative;height:110vh;background:var(--ink);color:var(--cream);overflow:hidden}
+  #welcome>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+    linear-gradient(180deg,rgba(55,22,18,.28),rgba(55,22,18,.18) 42%,rgba(55,22,18,.52)),
+    radial-gradient(ellipse at center,transparent 28%,rgba(55,22,18,.18) 100%)}
+  .hero .center{position:relative;z-index:2;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+  .kicker-line{display:flex;align-items:center;gap:12px;color:#ffe2a0;margin-bottom:32px;font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.3em;text-transform:uppercase}
+  .kicker-line span.rule{width:48px;height:1px;background:currentColor;opacity:.6}
+  .hero h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(48px,10.5vw,150px);line-height:.9;letter-spacing:-.025em;text-wrap:balance;color:#fffdf7;-webkit-text-fill-color:#fffdf7}
+  .hero h1 .shim{font-style:italic;background:none;color:#ffdc8a;-webkit-text-fill-color:#ffdc8a;animation:none}
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+  .hero p.sub{margin-top:40px;max-width:600px;font-size:18px;font-weight:500;color:#fff9ed}
+  .hero .cta{margin-top:56px;display:inline-flex;align-items:center;gap:16px;padding:16px 32px;border:1px solid rgba(255,249,237,.55);outline:0;border-radius:999px;background:rgba(251,247,240,.05);box-shadow:none;color:var(--cream);font-size:12px;text-transform:uppercase;letter-spacing:.3em;backdrop-filter:blur(4px);transition:.3s}
+  .hero .cta:hover{border-color:rgba(251,247,240,.8);background:rgba(251,247,240,.1)}
+  .hero .cta:focus{outline:0}
+  .hero .cta:focus-visible{border-color:#ffe2a0;box-shadow:0 0 0 3px rgba(255,226,160,.3)}
+  .scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:64px;background:rgba(251,247,240,.35);overflow:hidden}
+  .scroll-ind::after{content:"";position:absolute;top:0;left:0;width:1px;height:32px;background:var(--cream);animation:scrollDot 2.6s ease-in-out infinite}
+  @keyframes scrollDot{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(60px);opacity:0}}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.1s} .reveal.d2{transition-delay:.2s} .reveal.d3{transition-delay:.3s}
+
+  /* sections */
+  section.chapter{position:relative;padding:120px 0}
+  @media(min-width:768px){section.chapter{padding:180px 0}}
+  .kicker{display:flex;align-items:center;gap:12px;color:var(--gold)}
+  .kicker .rn{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.15em}
+  .kicker .rule{height:1px;width:40px;background:currentColor;opacity:.6}
+  .kicker .name{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
+  .display{font-family:var(--serif);font-size:clamp(40px,6vw,96px);line-height:.95;letter-spacing:-.02em;text-wrap:balance;margin-top:24px}
+  .body-text{margin-top:32px;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;font-weight:400;line-height:1.65;letter-spacing:-.01em;color:var(--ink-soft);max-width:58ch}
+  @media(min-width:768px){.body-text{font-size:16px}}
+
+  .grid{display:grid;gap:64px}
+  @media(min-width:768px){
+    .g-12{grid-template-columns:repeat(12,1fr);gap:48px}
+    .c-5{grid-column:span 5} .c-6{grid-column:span 6} .c-7{grid-column:span 7}
+    .sticky-col{position:sticky;top:120px;align-self:start}
+  }
+
+  /* photo placeholders */
+  .frame{position:relative;overflow:hidden;border-radius:2px;background:var(--cream);box-shadow:0 25px 60px -30px rgba(60,20,10,.35);border:1px solid rgba(0,0,0,.05)}
+  .ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;border:1px dashed rgba(241,127,99,.4);background:rgba(246,220,208,.4);border-radius:2px}
+  .ph .lbl{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--coral-deep)}
+  .ph .hint{margin-top:4px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(90,67,64,.7)}
+  .chapter-photo{position:relative;overflow:hidden;border-radius:6px;background:var(--blush);box-shadow:0 25px 60px -30px rgba(60,20,10,.45)}
+  .chapter-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+  .family-photo{aspect-ratio:632/419}
+  .ar-34{aspect-ratio:3/4} .ar-45{aspect-ratio:4/5} .ar-43{aspect-ratio:4/3}
+  .tilt-r{--base-rotate:2deg;transform:rotate(var(--base-rotate))} .tilt-l{--base-rotate:-2deg;transform:rotate(var(--base-rotate))}
+
+  .list-lines{margin-top:40px;list-style:none;display:flex;flex-direction:column;gap:16px;color:var(--ink-soft)}
+  .list-lines li{display:flex;gap:12px}
+  .list-lines .dash{margin-top:14px;height:1px;width:24px;background:var(--coral);flex-shrink:0}
+  .list-lines .txt{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3}
+
+  .quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,36px);line-height:1.3;border-left:2px solid var(--coral);padding-left:24px;margin-top:56px}
+  .quote footer{margin-top:12px;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+
+  .card-note{margin-top:40px;padding:24px;border:1px solid rgba(201,168,106,.5);background:var(--cream);border-radius:2px}
+  .card-note .h{font-family:var(--hand);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .card-note p{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:24px}
+
+  /* ch3 background */
+  .ch3-bg{background:linear-gradient(180deg,var(--cream),rgba(246,220,208,.45),var(--cream));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .stats{margin-top:96px;display:grid;gap:32px;padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  @media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stats .big{font-family:var(--serif);font-size:56px;font-weight:400;color:var(--coral-deep);line-height:1}
+  .stats .infinity-mark{display:inline-block;font:inherit;line-height:.72;transform:rotate(90deg)}
+  .stats .small{margin-top:8px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* timeline */
+  .timeline{position:relative;max-width:820px;margin:96px auto 0}
+  .timeline .rail{position:absolute;top:0;bottom:0;left:16px;width:1px;background:var(--border)}
+  .timeline .rail.fill{background:var(--coral);transform-origin:top;transform:scaleY(0);transition:transform .1s linear}
+  @media(min-width:768px){.timeline .rail{left:50%;transform:translateX(-.5px)} .timeline .rail.fill{transform:translateX(-.5px) scaleY(0)}}
+  .tl{list-style:none;display:flex;flex-direction:column;gap:64px}
+  @media(min-width:768px){.tl{gap:96px}}
+  .tl li{position:relative;padding-left:44px}
+  @media(min-width:768px){.tl li{padding-left:0;display:grid;grid-template-columns:1fr 1fr;gap:64px}}
+  .tl .dot{position:absolute;left:16px;top:8px;width:12px;height:12px;background:var(--cream);border:1px solid var(--coral);transform:translateX(-50%) rotate(45deg);z-index:2}
+  @media(min-width:768px){.tl .dot{left:50%}}
+  .tl .item .year{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+  .tl .item h3{margin-top:8px;font-family:var(--serif);font-size:32px;line-height:1.1}
+  .tl .item p{margin-top:12px;color:var(--ink-soft);line-height:1.6}
+  @media(min-width:768px){
+    .tl li:nth-child(odd) .item{grid-column:1;text-align:right;padding-right:48px}
+    .tl li:nth-child(even) .item{grid-column:2;padding-left:48px}
+  }
+
+  /* ch4 oreo */
+  .oreo-wrap{position:relative;max-width:410px;margin:0 auto}
+  .oreo-wrap::before{content:"";position:absolute;inset:-48px;background:rgba(246,220,208,.72);filter:blur(55px);border-radius:50%;z-index:-1}
+  #chapter-4 img{display:block;width:100%;aspect-ratio:15/17;object-fit:cover;object-position:center;border-radius:1px;background:#fff;box-shadow:0 30px 70px -38px rgba(60,20,10,.4)}
+  .oreo-tag{position:absolute;bottom:-12px;left:24px;transform:rotate(-6deg);font-family:var(--hand);font-size:30px;color:var(--coral-deep)}
+
+  /* ch5 dark */
+  .ch5{min-height:860px;background-color:#261311;color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
+  #chapter-5>img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .ch5::before{content:"";position:absolute;inset:0;z-index:1;background:
+    linear-gradient(90deg,rgba(35,17,15,.8),rgba(48,25,21,.7) 55%,rgba(38,18,16,.84)),
+    linear-gradient(180deg,rgba(35,17,15,.22),rgba(35,17,15,.52))}
+  .ch5 .wrap{position:relative;z-index:2;width:100%;max-width:900px}
+  .ch5 .display{max-width:760px;color:var(--cream);font-size:clamp(48px,5.4vw,76px);line-height:.94}
+  .ch5 .body-text{max-width:650px;color:rgba(251,247,240,.72)}
+  .ch5 .kicker .name{color:var(--gold-soft)}
+  .lessons{margin-top:52px;display:grid;gap:24px}
+  @media(min-width:768px){.lessons{grid-template-columns:repeat(3,1fr)}}
+  .lessons .l{padding-left:20px;border-left:1px solid rgba(201,168,106,.5)}
+  .lessons .l .w{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--gold-soft)}
+  .lessons .l p{margin-top:8px;font-size:13px;color:rgba(251,247,240,.7);line-height:1.6}
+  .ch5 .big-quote{margin-top:64px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.2vw,44px);line-height:1.25}
+
+  /* ch6 */
+  .goals{margin-top:40px;list-style:none;display:flex;flex-direction:column;gap:16px}
+  .goals li{display:flex;gap:16px}
+  .goals .n{font-family:var(--serif);font-style:italic;color:var(--gold);width:32px;flex-shrink:0}
+  .goals .t{font-family:var(--serif);font-size:24px}
+  .goals .b{font-size:13px;color:var(--ink-soft)}
+  #chapter-6 img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;border-radius:4px;background:var(--blush);box-shadow:0 40px 80px -30px rgba(60,20,10,.35)}
+
+  /* invite */
+  .invite{min-height:900px;padding:115px 0 72px!important;background-color:#2c1917;color:var(--cream);position:relative;overflow:hidden}
+  #invite>img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .invite::before{content:"";position:absolute;inset:0;z-index:1;background:
+    linear-gradient(180deg,rgba(48,29,26,.72),rgba(39,20,18,.84)),
+    radial-gradient(circle at center,rgba(70,42,36,.18),rgba(20,12,11,.48) 100%)}
+  .invite .wrap{position:relative;z-index:2;max-width:788px;text-align:center}
+  .invite .display{color:var(--cream);font-size:clamp(48px,5.5vw,74px);line-height:.95}
+  .invite .display .shim{background:linear-gradient(90deg,var(--gold),#f2e0b3,var(--gold));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite;font-style:italic}
+  .youre{font-size:12px;text-transform:uppercase;letter-spacing:.4em;color:var(--gold-soft)}
+  .invite-sub{margin:22px auto 0;max-width:500px;color:rgba(251,247,240,.8);font-size:16px}
+  .card{margin-top:48px;background:var(--cream);color:var(--ink);border:1px solid rgba(201,168,106,.4);border-radius:5px;box-shadow:0 50px 120px -40px rgba(0,0,0,.65);text-align:left}
+  .card-grid{display:grid}
+  @media(min-width:768px){.card-grid{grid-template-columns:1fr 1fr}}
+  .card-col{padding:40px}
+  @media(min-width:768px){.card-col{padding:40px}}
+  .card-col+.card-col{border-top:1px solid var(--border)}
+  @media(min-width:768px){.card-col+.card-col{border-top:0;border-left:1px solid var(--border)}}
+  .rule-diamond{display:flex;align-items:center;gap:16px;color:var(--gold);margin-bottom:32px}
+  .rule-diamond::before,.rule-diamond::after{content:"";flex:1;height:1px;background:currentColor;opacity:.5}
+  .rule-diamond span{transform:rotate(45deg);font-size:18px}
+  .card-h{font-family:var(--serif);font-size:14px;text-transform:uppercase;letter-spacing:.3em;color:var(--gold)}
+  .detail{margin-top:24px}
+  .detail dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+  .detail dd{margin-top:4px;font-family:var(--serif);font-size:28px;line-height:1.1}
+  .detail a{margin-left:8px;display:inline-flex;align-items:center;gap:4px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--coral-deep);border-bottom:1px solid transparent}
+  .detail a:hover{border-color:currentColor}
+  .dont ul{margin-top:32px;list-style:none;display:flex;flex-direction:column;gap:16px;font-family:var(--serif);font-style:italic;font-size:24px}
+  .count-lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+  .countdown{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+  .countdown .cell{overflow:hidden;height:64px;position:relative}
+  .countdown .num{font-family:var(--serif);font-size:44px;font-variant-numeric:tabular-nums;line-height:64px;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .countdown .clbl{margin-top:8px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+  .card-foot{border-top:1px solid var(--border);padding:32px 40px;display:flex;flex-direction:column;align-items:center;gap:16px}
+  @media(min-width:768px){.card-foot{flex-direction:row;justify-content:space-between}}
+  .card-foot .hand{font-family:var(--hand);font-size:24px;color:var(--coral-deep)}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:999px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;border:0;font-family:inherit;transition:.3s}
+  .btn-primary{background:var(--coral);color:var(--cream)}
+  .btn-primary:hover{background:var(--coral-deep)}
+  .btn-ghost{background:transparent;border:1px solid rgba(42,26,24,.2);color:var(--ink)}
+  .btn-ghost:hover{border-color:rgba(42,26,24,.6)}
+  .btn-link{background:transparent;color:var(--ink-soft);font-size:13px;text-transform:none;letter-spacing:normal;padding:8px 12px}
+  .btn-link:hover{color:var(--ink)}
+  .ico{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  /* footer */
+  .foot{border-top:1px solid var(--border);background:var(--cream);padding:56px 0;text-align:center}
+  .foot .row{display:flex;flex-direction:column;gap:16px;align-items:center}
+  @media(min-width:768px){.foot .row{flex-direction:row;justify-content:space-between;text-align:left}}
+  .foot .brand{font-family:var(--serif);font-style:italic;font-size:24px}
+  .foot .sub{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+  .foot .thanks{font-family:var(--hand);font-size:22px;color:var(--coral-deep)}
+
+  /* confetti */
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
+
+  /* responsive layout safeguards */
+  .chapter-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+  .chapter-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .photo-wall{margin-top:96px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+  .photo-wall .team-photo{grid-column:1/-1;aspect-ratio:3/1}
+
+  @media(min-width:768px){
+    #chapter-2 .grid{align-items:start}
+    #chapter-2 .chapter-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+    #chapter-2 .chapter-pair>.ph:first-child{margin-top:0;--base-rotate:-1.5deg}
+    #chapter-2 .chapter-pair>.ph:last-child{margin-top:64px!important;--base-rotate:1.5deg}
+    #chapter-2 .quote{max-width:100%;margin-top:56px}
+    #chapter-2 .grid>.c-5{padding-top:48px}
+  }
+
+  @media(max-width:767px){
+    .wrap{width:100%;padding-inline:20px}
+    .topbar{mix-blend-mode:normal;color:var(--cream);background:linear-gradient(180deg,rgba(26,15,14,.88),rgba(26,15,14,.5),transparent)}
+    .topbar .inner{padding:16px 20px;gap:12px}
+    .topbar .inner>span:first-child{font-size:16px!important;white-space:nowrap}
+    .topbar .inner>span:last-child{font-size:18px!important;white-space:nowrap}
+
+    .hero{height:auto;min-height:100svh}
+    .hero .center{height:auto;min-height:100svh;padding:96px 20px 112px}
+    .hero h1{font-size:clamp(42px,13vw,68px);line-height:.94}
+    .hero p.sub{margin-top:28px;font-size:16px}
+    .hero .cta{margin-top:36px;padding:14px 22px;letter-spacing:.2em}
+    .kicker-line{gap:8px;margin-bottom:24px;font-size:11px;letter-spacing:.2em}
+    .kicker-line span.rule{width:28px}
+    .scroll-ind{bottom:20px;height:48px}
+
+    section.chapter{padding:88px 0}
+    .grid{gap:48px}
+    #chapter-2 .grid>.c-7{order:2}
+    #chapter-2 .grid>.c-5{order:1;padding-top:0!important}
+    #chapter-4 .grid>.c-6:first-child{order:2}
+    #chapter-4 .grid>.c-6:last-child{order:1}
+    .display{font-size:clamp(38px,12vw,56px)}
+    .body-text{margin-top:24px;font-size:16px}
+    .sticky-col{position:static}
+    .kicker{gap:9px;flex-wrap:wrap}
+    .kicker .name{letter-spacing:.2em}
+
+    .chapter-gallery{gap:14px}
+    .chapter-gallery>.ph,.chapter-gallery>.chapter-photo{grid-column:1/-1!important;margin-top:0!important}
+    .chapter-pair{gap:14px}
+    .chapter-pair>.ph:nth-child(2){margin-top:32px!important}
+    .tilt-r{transform:rotate(1deg)}
+    .tilt-l{transform:rotate(-1deg)}
+    .quote{margin-top:40px;padding-left:18px}
+
+    .timeline,.stats{margin-top:64px}
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
+    .stats .big{font-size:44px;overflow-wrap:anywhere}
+    .photo-wall{margin-top:64px}
+    .photo-wall>.ph{margin-top:0!important}
+
+    .oreo-wrap{max-width:min(82vw,360px);margin-bottom:20px}
+    .oreo-tag{left:12px;font-size:27px}
+    .lessons{gap:32px}
+    .ch5 .big-quote{margin-top:56px}
+
+    .card{margin-top:44px}
+    .invite{background-position:52% center}
+    .card-col{padding:32px 24px}
+    .detail dd{font-size:24px;overflow-wrap:anywhere}
+    .detail a{margin:10px 0 0}
+    .countdown{gap:6px}
+    .countdown .num{font-size:clamp(30px,10vw,42px)}
+    .countdown .clbl{font-size:8px;letter-spacing:.12em}
+    .card-foot{padding:28px 20px;text-align:center}
+    .actions{width:100%}
+    .btn{justify-content:center;min-height:44px}
+    .btn-primary,.btn-ghost{flex:1 1 145px}
+  }
+
+  @media(max-width:420px){
+    .wrap{padding-inline:16px}
+    .topbar .inner{padding-inline:16px}
+    .hero .center{padding-inline:16px}
+    .hero h1{font-size:clamp(38px,12.5vw,52px)}
+    .chapter-pair{grid-template-columns:1fr}
+    .chapter-pair>.ph:nth-child(2){margin-top:0!important}
+    .stats{grid-template-columns:1fr 1fr}
+    .card-col{padding-inline:18px}
+    .countdown{grid-template-columns:repeat(2,1fr);gap:18px 10px}
+    .countdown .clbl{font-size:9px;letter-spacing:.18em}
+  }
+
+  /* lightweight 3D hover interactions */
+  .interactive-3d{
+    --tilt-x:0deg;
+    --tilt-y:0deg;
+    --lift:0px;
+    transform:perspective(900px) rotateZ(var(--base-rotate,0deg)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--lift));
+    transform-style:preserve-3d;
+    transition:transform .42s cubic-bezier(.22,1,.36,1),box-shadow .42s ease,filter .42s ease;
+  }
+  .reveal.in.interactive-3d{transform:perspective(900px) rotateZ(var(--base-rotate,0deg)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--lift))}
+  .interactive-3d.is-hovered{
+    --lift:-8px;
+    box-shadow:0 34px 70px -28px rgba(60,20,10,.5);
+    filter:saturate(1.06);
+  }
+  .chapter-photo.interactive-3d.is-hovered{--lift:-12px;box-shadow:0 42px 80px -24px rgba(60,20,10,.58);filter:saturate(1.12)}
+  .interactive-button{
+    --button-rx:0deg;
+    --button-ry:0deg;
+    transform:perspective(600px) rotateX(var(--button-rx)) rotateY(var(--button-ry)) translateY(0);
+    transform-style:preserve-3d;
+    box-shadow:0 8px 20px -12px rgba(42,26,24,.6);
+    transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,background-color .25s ease;
+  }
+  .interactive-button.is-hovered{transform:perspective(600px) rotateX(var(--button-rx)) rotateY(var(--button-ry)) translateY(-4px);box-shadow:0 16px 30px -12px rgba(42,26,24,.55)}
+  .interactive-button:active{transform:perspective(600px) rotateX(0) rotateY(0) translateY(1px) scale(.97)}
+
+  @media(hover:none),(pointer:coarse){
+    .interactive-3d,.interactive-button{transform:rotate(var(--base-rotate,0deg))}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    .interactive-3d,.interactive-button{transform:rotate(var(--base-rotate,0deg))!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <span class="serif" style="font-style:italic;font-size:18px">Bhargavi · 40</span>
+    <span class="mid">A Cinematic Journey</span>
+    <span class="hand" style="font-size:22px">01.08.2026</span>
+  </div>
+</header>
+
+<nav class="chapnav" aria-label="Chapters">
+  <ul id="chapNav"></ul>
+</nav>
+
+<!-- HERO -->
+<section id="welcome" class="hero">
+  <!-- HERO IMAGE: added directly with an img tag -->
+  <img src="hero-silk.jpg" alt="Flowing silk background">
+  <div class="center">
+    <div class="kicker-line"><span class="rule"></span>A Love Letter<span class="rule"></span></div>
+    <h1>
+      <span>Forty Years.</span><br>
+      <span class="shim">Countless Lessons.</span><br>
+      <span>Endless Gratitude.</span>
+    </h1>
+    <p class="sub">A quiet cinema of the life of <span class="serif" style="font-style:italic">Bhargavi</span> — told in seven chapters.</p>
+    <a href="#chapter-1" class="cta">Begin the Journey
+      <svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
+  <div class="scroll-ind"></div>
+</section>
+
+<!-- CHAPTER I -->
+<section id="chapter-1" class="chapter">
+  <div class="wrap">
+    <div class="grid g-12">
+      <div class="c-5 sticky-col">
+        <div class="kicker reveal"><span class="rn">Chapter I</span><span class="rule"></span><span class="name">The Beginning</span></div>
+        <h2 class="display reveal d1">A small girl with <em>enormous</em> eyes.</h2>
+        <p class="body-text reveal d2">Before the awards, the boardrooms, the plane tickets — there was a child somewhere in a room full of laughter, being told she could become anything. And believing it.</p>
+        <ul class="list-lines">
+          <li class="reveal"><span class="dash"></span><span class="txt">The house that smelled of ghee and warm cotton.</span></li>
+          <li class="reveal d1"><span class="dash"></span><span class="txt">A mother's hand at the back of my head.</span></li>
+          <li class="reveal d2"><span class="dash"></span><span class="txt">The first time someone said, "you are meant for something."</span></li>
+        </ul>
+      </div>
+      <div class="c-7">
+        <div class="chapter-gallery">
+          <figure class="chapter-photo ar-34 tilt-l reveal" style="grid-column:1/span 3">
+            <img src="Bhargavi.jpg" alt="Young Bhargavi smiling in a colourful room with books and toys" loading="lazy">
+          </figure>
+          <figure class="chapter-photo ar-45 tilt-r reveal d1" style="grid-column:4/span 3;margin-top:64px">
+            <!-- CHAPTER I IMAGE: added directly with an img tag -->
+            <img src="peony.jpg" alt="A bouquet of bright pink peonies" loading="lazy">
+          </figure>
+          <figure class="chapter-photo family-photo reveal d2" style="grid-column:1/-1">
+            <img src="Family.jpg" alt="Bhargavi with her family gathered together" loading="lazy">
+          </figure>
+        </div>
+        <p class="hand reveal" style="margin-top:32px;font-size:26px;color:var(--coral-deep);max-width:28ch">"Every long journey begins with someone loving you first."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER II -->
+<section id="chapter-2" class="chapter">
+  <div class="wrap">
+    <div class="grid g-12">
+      <div class="c-7">
+        <div class="chapter-pair">
+          <div class="ph ar-34 tilt-l reveal"><div><div class="lbl">School Days</div></div></div>
+          <div class="ph ar-34 tilt-r reveal d1" style="margin-top:64px"><div><div class="lbl">College</div></div></div>
+        </div>
+        <blockquote class="quote reveal d2">"I used to write my dreams on the last page of my notebook. Then I ran out of pages."
+          <footer>— a teenager, still learning</footer>
+        </blockquote>
+      </div>
+      <div class="c-5" style="padding-top:48px">
+        <div class="kicker reveal"><span class="rn">Chapter II</span><span class="rule"></span><span class="name">Growing Up</span></div>
+        <h2 class="display reveal d1">Uniforms, crushes, and a <em>very</em> big plan.</h2>
+        <p class="body-text reveal d2">Somewhere between chalkboards and canteens, the plan began to form — scribbled between physics equations and forwarded jokes on Nokia phones.</p>
+        <div class="card-note reveal d3">
+          <div class="h">Biggest dream, aged 17</div>
+          <p>To build something with my name on it, and enough space inside for everyone I love.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER III -->
+<section id="chapter-3" class="chapter ch3-bg">
+  <div class="wrap">
+    <div style="max-width:720px">
+      <div class="kicker reveal"><span class="rn">Chapter III</span><span class="rule"></span><span class="name">Building My Own Story</span></div>
+      <h2 class="display reveal d1"><em>Digital Go Where</em> — and how it went everywhere.</h2>
+      <p class="body-text reveal d2">Every company is really a scrapbook of Mondays. Here are a few pages worth framing — the milestones, the mistakes, and the people who made both worth it.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="rail"></div>
+      <div class="rail fill" id="timelineFill"></div>
+      <ol class="tl" id="tl"></ol>
+    </div>
+
+    <div class="stats">
+      <div class="reveal"><div class="big">17+</div><div class="small">Years in the making</div></div>
+      <div class="reveal d1"><div class="big">1 → many</div><div class="small">Team that became family</div></div>
+      <div class="reveal d2"><div class="big">3</div><div class="small">Countries called home</div></div>
+      <div class="reveal d3"><div class="big"><span class="infinity-mark" aria-label="infinity">8</span></div><div class="small">Cups of terrible coffee</div></div>
+    </div>
+
+    <div class="photo-wall">
+      <figure class="chapter-photo team-photo reveal">
+        <img src="Team.jpg" alt="Bhargavi standing with her team in front of a red backdrop" loading="lazy">
+      </figure>
+      <div class="ph ar-43 tilt-r reveal d1" style="margin-top:40px"><div><div class="lbl">First Office</div></div></div>
+      <div class="ph ar-43 tilt-l reveal d2"><div><div class="lbl">An Award Night</div></div></div>
+      <div class="ph ar-43 tilt-r reveal d1" style="margin-top:40px"><div><div class="lbl">Team Moments</div></div></div>
+      <div class="ph ar-43 tilt-l reveal d2"><div><div class="lbl">Milestones</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER IV -->
+<section id="chapter-4" class="chapter">
+  <div class="wrap">
+    <div class="grid g-12" style="align-items:center">
+      <div class="c-6">
+        <div class="oreo-wrap reveal">
+          <!-- CHAPTER IV OREO IMAGE: added directly with an img tag -->
+          <img src="oreo-new.jpg" alt="Oreo, a smiling golden Labrador puppy wearing a blue collar" loading="lazy">
+          <div class="oreo-tag">my Oreo ♥</div>
+        </div>
+      </div>
+      <div class="c-6">
+        <div class="kicker reveal"><span class="rn">Chapter IV</span><span class="rule"></span><span class="name">Oreo</span></div>
+        <h2 class="display reveal d1">A tiny heartbeat that <em>runs</em> this house.</h2>
+        <p class="body-text reveal d2">He does not care about companies, countries, or crores. He cares about 6 PM, and whether I am home yet. Which — turns out — is the only measure that matters.</p>
+        <div class="card-note reveal d3" style="border-color:rgba(241,127,99,.3)">
+          <p style="margin-top:0">"You taught me that love is small, and warm, and shows up every single day — even when it doesn't understand a single word you've said."</p>
+          <p class="hand" style="margin-top:16px;font-size:22px;color:var(--coral-deep);font-family:var(--hand);font-style:normal">— for my Oreo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER V -->
+<section id="chapter-5" class="chapter ch5">
+  <!-- CHAPTER V IMAGE: added directly with an img tag -->
+  <img src="resilience.jpg" alt="A reflective scene representing resilience" loading="lazy">
+  <div class="wrap">
+    <div class="kicker reveal" style="color:var(--gold-soft)"><span class="rn">Chapter V</span><span class="rule"></span><span class="name">Life's Toughest Chapters</span></div>
+    <h2 class="display reveal d1">Rain doesn't ruin the story. <em>It writes it.</em></h2>
+    <p class="body-text reveal d2">A divorce that rewrote what love should mean. Health scares that reminded me the body is a home, not a machine. Family that grew in shape. And the slow, unglamorous miracle of putting yourself back together — one Tuesday at a time.</p>
+    <div class="lessons">
+      <div class="l reveal"><div class="w">Softer</div><p>with people, especially the ones going through their own storm.</p></div>
+      <div class="l reveal d1"><div class="w">Braver</div><p>about asking for help, and giving it without keeping score.</p></div>
+      <div class="l reveal d2"><div class="w">Slower</div><p>to judge — everyone is fighting on a battlefield you cannot see.</p></div>
+    </div>
+    <p class="big-quote reveal d3">"Every chapter made me who I am today.<br>I would not trade one line of it."</p>
+  </div>
+</section>
+
+<!-- CHAPTER VI -->
+<section id="chapter-6" class="chapter">
+  <div class="wrap">
+    <div class="grid g-12">
+      <div class="c-5">
+        <div class="kicker reveal"><span class="rn">Chapter VI</span><span class="rule"></span><span class="name">Dreams Ahead</span></div>
+        <h2 class="display reveal d1">The <em>next</em> forty.</h2>
+        <p class="body-text reveal d2">A skyline in Singapore. Brands that mean something on more than one continent. Rooms full of people I helped grow. And enough breathing room in the calendar to actually enjoy any of it.</p>
+        <ol class="goals" id="goals"></ol>
+      </div>
+      <div class="c-7">
+        <!-- CHAPTER VI IMAGE: added directly with an img tag -->
+        <img src="dreams.jpg" alt="Singapore skyline across the water at sunset" loading="lazy">
+        <p class="hand reveal d1" style="margin-top:24px;font-size:24px;color:var(--coral-deep)">See you on the other side of the sea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVITATION -->
+<section id="invite" class="chapter invite">
+  <!-- INVITATION IMAGE: added directly with an img tag -->
+  <img src="celebration.jpg" alt="Colourful birthday celebration" loading="lazy">
+  <div class="wrap">
+    <div class="youre reveal">You're Invited</div>
+    <h2 class="display reveal d1" style="margin-top:24px">A day worth <span class="shim">forty</span>.</h2>
+    <p class="invite-sub reveal d2">Come as loud, as colourful, as messy, and as alive as you are on your best day.</p>
+
+    <div class="card reveal d3">
+      <div class="card-grid">
+        <div class="card-col">
+          <div class="rule-diamond"><span>◆</span></div>
+          <div class="card-h">The Details</div>
+          <dl class="detail"><dt>Date</dt><dd>1 August</dd></dl>
+          <dl class="detail"><dt>Time</dt><dd>3 PM onwards</dd></dl>
+          <dl class="detail"><dt>Venue</dt><dd>Rawla Lohgarh
+            <a href="https://maps.google.com/?q=Rawla+Lohgarh" target="_blank" rel="noreferrer">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M12 22s7-8 7-13a7 7 0 10-14 0c0 5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg> Map
+            </a>
+          </dd></dl>
+          <dl class="detail"><dt>Afternoon</dt><dd>A pool waits. Bring your swimsuit.</dd></dl>
+          <dl class="detail"><dt>Evening</dt><dd>Dress as colourful as a flamingo 🦩</dd></dl>
+        </div>
+        <div class="card-col dont">
+          <div class="card-h">Don't Forget</div>
+          <ul>
+            <li>Sunscreen</li><li>Colourful goggles</li><li>Mosquito repellent</li><li>Your best energy</li>
+          </ul>
+          <div class="rule-diamond" style="margin:40px 0"><span>◆</span></div>
+          <div class="count-lbl">Countdown to the day</div>
+          <div class="countdown" id="countdown">
+            <div><div class="cell"><div class="num" data-k="d">00</div></div><div class="clbl">Days</div></div>
+            <div><div class="cell"><div class="num" data-k="h">00</div></div><div class="clbl">Hours</div></div>
+            <div><div class="cell"><div class="num" data-k="m">00</div></div><div class="clbl">Minutes</div></div>
+            <div><div class="cell"><div class="num" data-k="s">00</div></div><div class="clbl">Seconds</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-foot">
+        <p class="hand">Bhargavi is turning forty — and so are the memories.</p>
+        <div class="actions">
+          <button class="btn btn-primary" id="rsvpBtn">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            <span id="rsvpLabel">See you there</span>
+          </button>
+          <button class="btn btn-ghost" id="shareBtn">
+            <svg class="ico" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+            Share
+          </button>
+          <a class="btn btn-link" href="mailto:bhargavi@example.com?subject=I%27ll%20be%20there%20—%20Bhargavi%2040">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            RSVP by email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap row">
+    <div>
+      <div class="brand">Bhargavi · 40</div>
+      <div class="sub">Made with love, and a little rebellion.</div>
+    </div>
+    <div class="thanks">Thank you for being part of the story.</div>
+  </div>
+</footer>
+
+<canvas id="confetti"></canvas>
+
+<script>
+/* ---------- Chapter nav ---------- */
+const CHAPTERS = [
+  {id:'welcome',label:'Welcome',roman:'—'},
+  {id:'chapter-1',label:'The Beginning',roman:'I'},
+  {id:'chapter-2',label:'Growing Up',roman:'II'},
+  {id:'chapter-3',label:'The Story',roman:'III'},
+  {id:'chapter-4',label:'Oreo',roman:'IV'},
+  {id:'chapter-5',label:'The Storms',roman:'V'},
+  {id:'chapter-6',label:'Dreams Ahead',roman:'VI'},
+  {id:'invite',label:'The Invitation',roman:'VII'},
+];
+const nav = document.getElementById('chapNav');
+CHAPTERS.forEach(c=>{
+  const li=document.createElement('li');
+  li.innerHTML=`<a href="#${c.id}" data-id="${c.id}"><span class="lbl">${c.roman} — ${c.label}</span><span class="bar"></span></a>`;
+  nav.appendChild(li);
+});
+const navLinks = [...nav.querySelectorAll('a')];
+const topbar = document.querySelector('.topbar');
+const heroSection = document.querySelector('.hero');
+function updateTopbarColor(){
+  topbar.classList.toggle('past-hero',heroSection.getBoundingClientRect().bottom<=80);
+}
+document.addEventListener('scroll',updateTopbarColor,{passive:true});
+window.addEventListener('resize',updateTopbarColor);
+updateTopbarColor();
+
+const navIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.toggle('active', a.dataset.id===e.target.id));
+    }
+  });
+},{rootMargin:'-45% 0px -45% 0px'});
+CHAPTERS.forEach(c=>{const el=document.getElementById(c.id); if(el) navIO.observe(el);});
+
+/* ---------- Reveal on scroll ---------- */
+const revIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revIO.unobserve(e.target); }});
+},{rootMargin:'-60px'});
+document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
+
+/* ---------- Timeline ---------- */
+const milestones = [
+  {year:'The Spark',title:'Started with a dream',body:'A restless idea, a notebook, and the audacity to begin.'},
+  {year:'Day One',title:'The first client',body:'One handshake that changed everything — proof the dream had wings.'},
+  {year:'The Team',title:'The first employee',body:'The first person who believed enough to show up on Monday morning.'},
+  {year:'Four Walls',title:'The first office',body:'Coffee stains, whiteboards, and a door with our name on it.'},
+  {year:'The Number',title:'The first ₹1 crore',body:'Not the finish line — a whisper that said keep going.'},
+  {year:'Skylines',title:'Singapore calls',body:'A city built on ambition asked us to come play.'},
+  {year:'Today',title:'Regional CMO',body:'Building global brands, and the people behind them.'},
+];
+const tl = document.getElementById('tl');
+milestones.forEach(m=>{
+  const li=document.createElement('li');
+  li.className='reveal';
+  li.innerHTML=`<span class="dot"></span><div class="item"><div class="year">${m.year}</div><h3>${m.title}</h3><p>${m.body}</p></div>`;
+  tl.appendChild(li);
+  revIO.observe(li);
+});
+/* fill line on scroll */
+const fillEl = document.getElementById('timelineFill');
+const tlContainer = document.querySelector('.timeline');
+const isDesk = ()=>window.innerWidth>=768;
+function updFill(){
+  const r = tlContainer.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = r.height + vh*0.3;
+  const p = Math.max(0, Math.min(1, (vh*0.7 - r.top)/total));
+  fillEl.style.transform = (isDesk()?'translateX(-.5px) ':'') + `scaleY(${p})`;
+}
+document.addEventListener('scroll', updFill, {passive:true});
+window.addEventListener('resize', updFill);
+updFill();
+
+/* ---------- Goals ---------- */
+const goals = [
+  ['Singapore','Make it home for a while — properly.'],
+  ['Global brands','Build the ones I would be proud to buy.'],
+  ['Mentorship','Open doors. Loudly.'],
+  ['The quiet things','Sleep. Sunlight. Long lunches with people I love.'],
+];
+const gEl = document.getElementById('goals');
+goals.forEach(([t,b],i)=>{
+  const li=document.createElement('li');
+  li.className='reveal';
+  li.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><div><div class="t">${t}</div><div class="b">${b}</div></div>`;
+  gEl.appendChild(li);
+  revIO.observe(li);
+});
+
+/* ---------- Countdown ---------- */
+const TARGET = new Date('2026-08-01T15:00:00+05:30').getTime();
+const nums = {};
+document.querySelectorAll('.countdown .num').forEach(n=>nums[n.dataset.k]=n);
+const last = {d:null,h:null,m:null,s:null};
+function tick(){
+  const now = Date.now();
+  const d = Math.max(0, TARGET-now);
+  const v = {
+    d: Math.floor(d/86400000),
+    h: Math.floor((d/3600000)%24),
+    m: Math.floor((d/60000)%60),
+    s: Math.floor((d/1000)%60),
+  };
+  for(const k of ['d','h','m','s']){
+    if(v[k]!==last[k]){
+      nums[k].textContent = String(v[k]).padStart(2,'0');
+      nums[k].animate(
+        [{transform:'translateY(100%)',opacity:0},{transform:'translateY(0)',opacity:1}],
+        {duration:500,easing:'cubic-bezier(.22,1,.36,1)'}
+      );
+      last[k]=v[k];
+    }
+  }
+}
+tick(); setInterval(tick,1000);
+
+/* ---------- Confetti ---------- */
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+const COLORS = ['#F17F63','#FBB77C','#F5C0A5','#E88A9E','#EFD9A6','#FBF7F0'];
+let pieces = [];
+function resize(){ canvas.width=innerWidth*devicePixelRatio; canvas.height=innerHeight*devicePixelRatio; canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px'; }
+resize(); addEventListener('resize',resize);
+function loop(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const dpr = devicePixelRatio;
+  pieces = pieces.filter(p=>p.y < canvas.height/dpr + 40);
+  pieces.forEach(p=>{
+    p.vy+=0.15; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+    ctx.save();
+    ctx.translate(p.x*dpr,p.y*dpr);
+    ctx.rotate(p.rot*Math.PI/180);
+    ctx.fillStyle=p.color;
+    if(p.shape==='rect') ctx.fillRect(-p.size*dpr,-p.size*dpr*.5,p.size*2*dpr,p.size*dpr);
+    else { ctx.beginPath(); ctx.arc(0,0,p.size*dpr,0,Math.PI*2); ctx.fill(); }
+    ctx.restore();
+  });
+  requestAnimationFrame(loop);
+}
+loop();
+function fire(count=140, origin){
+  const ox = origin?.x ?? innerWidth/2;
+  const oy = origin?.y ?? innerHeight*0.35;
+  for(let i=0;i<count;i++){
+    const a = Math.random()*Math.PI*2;
+    const s = 4+Math.random()*8;
+    pieces.push({x:ox,y:oy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,rot:Math.random()*360,vr:(Math.random()-.5)*12,size:3+Math.random()*5,color:COLORS[Math.floor(Math.random()*COLORS.length)],shape:Math.random()>.5?'rect':'circle'});
+  }
+}
+
+/* fire when invite in view */
+let fired = false;
+const inviteIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !fired){ fired=true; setTimeout(()=>fire(160),400); }
+  });
+},{threshold:.35});
+inviteIO.observe(document.getElementById('invite'));
+
+/* buttons */
+document.getElementById('rsvpBtn').addEventListener('click',(e)=>{
+  const r=e.currentTarget.getBoundingClientRect();
+  fire(180,{x:r.left+r.width/2,y:r.top});
+  document.getElementById('rsvpLabel').textContent='See you there ❤';
+});
+document.getElementById('shareBtn').addEventListener('click', async ()=>{
+  const url = location.href;
+  const text = `40 Years of Bhargavi — join the celebration on 1 August. ${url}`;
+  if(navigator.share){
+    try{ await navigator.share({title:'40 Years of Bhargavi', text, url}); return; }catch{}
+  }
+  open(`https://wa.me/?text=${encodeURIComponent(text)}`,'_blank');
+});
+/* ---------- Lightweight 3D hover ---------- */
+const canHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const reduceMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(canHover && !reduceMotion){
+  document.querySelectorAll('.ph,.chapter-photo,.oreo-wrap,#chapter-6 img,.photo-wall .frame').forEach(el=>{
+    el.classList.add('interactive-3d');
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--tilt-x',`${(-y*7).toFixed(2)}deg`);
+      el.style.setProperty('--tilt-y',`${(x*7).toFixed(2)}deg`);
+      el.classList.add('is-hovered');
+    });
+    el.addEventListener('pointerleave',()=>{
+      el.style.setProperty('--tilt-x','0deg');
+      el.style.setProperty('--tilt-y','0deg');
+      el.classList.remove('is-hovered');
+    });
+  });
+
+  document.querySelectorAll('.btn,.hero .cta').forEach(el=>{
+    el.classList.add('interactive-button');
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--button-rx',`${(-y*8).toFixed(2)}deg`);
+      el.style.setProperty('--button-ry',`${(x*10).toFixed(2)}deg`);
+      el.classList.add('is-hovered');
+    });
+    el.addEventListener('pointerleave',()=>{
+      el.style.setProperty('--button-rx','0deg');
+      el.style.setProperty('--button-ry','0deg');
+      el.classList.remove('is-hovered');
+    });
+  });
+}
+</script>
+</body>
+</html>
