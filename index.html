@@ -12,16 +12,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#fbf7f0; --blush:#f6dcd0; --coral:#f17f63; --coral-deep:#c45a44;
-    --gold:#c9a86a; --gold-soft:#e8d4a8; --ink:#2a1a18; --ink-soft:#5a4340;
-    --border:#e6d8cc;
+    /* Main palette: reference pink, flamingo pink, white and sunny yellow */
+    --cream:#ffffff; --blush:#ffe5ed; --coral:#fc8eac; --coral-deep:#ed174f;
+    --gold:#f4b400; --gold-soft:#ffe28a; --ink:#241219; --ink-soft:#67414e;
+    --border:#f5c7d4; --surface-pink:rgba(255,241,246,.92);
     --serif:"Instrument Serif","Cormorant Garamond",Georgia,serif;
     --sans:"Inter",system-ui,sans-serif;
     --hand:"Caveat",cursive;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--cream);color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+  body{
+    background-color:var(--cream);
+    background-image:url("bg.jpeg");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5
+  }
   img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
   em{font-style:italic}
@@ -42,7 +51,7 @@
   .topbar .inner{display:flex;justify-content:space-between;align-items:center;padding:24px 24px;max-width:1400px;margin:0 auto}
   .topbar .mid{display:none;font-size:11px;text-transform:uppercase;letter-spacing:.35em}
   .topbar .inner>span:first-child,
-  .topbar .inner>span:last-child{color:#75dfe5;text-shadow:0 1px 10px rgba(42,26,24,.22);transition:color .35s ease,text-shadow .35s ease}
+  .topbar .inner>span:last-child{color:#ffc6aa;text-shadow:0 1px 10px rgba(42,26,24,.3);transition:color .35s ease,text-shadow .35s ease}
   .topbar.past-hero .inner>span:first-child,
   .topbar.past-hero .inner>span:last-child{color:#17100f;text-shadow:none}
   @media(min-width:768px){.topbar .mid{display:block}.topbar .inner{padding:24px 40px}}
@@ -60,21 +69,23 @@
 
   /* hero */
   .hero{position:relative;height:110vh;background:var(--ink);color:var(--cream);overflow:hidden}
-  #welcome>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  #welcome>.hero-media{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #welcome>.hero-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.76) saturate(.88);animation:heroImageFade 1.4s ease-out both}
   .hero::before{content:"";position:absolute;inset:0;z-index:1;background:
-    linear-gradient(180deg,rgba(55,22,18,.28),rgba(55,22,18,.18) 42%,rgba(55,22,18,.52)),
-    radial-gradient(ellipse at center,transparent 28%,rgba(55,22,18,.18) 100%)}
+    linear-gradient(180deg,rgba(31,18,28,.24),rgba(58,27,31,.18) 40%,rgba(43,20,24,.62)),
+    radial-gradient(ellipse at center,transparent 24%,rgba(31,18,28,.3) 100%)}
+  @keyframes heroImageFade{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
   .hero .center{position:relative;z-index:2;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
-  .kicker-line{display:flex;align-items:center;gap:12px;color:#ffe2a0;margin-bottom:32px;font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.3em;text-transform:uppercase}
+  .kicker-line{display:flex;align-items:center;gap:12px;color:#ffc6aa;margin-bottom:32px;font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.3em;text-transform:uppercase}
   .kicker-line span.rule{width:48px;height:1px;background:currentColor;opacity:.6}
-  .hero h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(48px,10.5vw,150px);line-height:.9;letter-spacing:-.025em;text-wrap:balance;color:#fffdf7;-webkit-text-fill-color:#fffdf7}
-  .hero h1 .shim{font-style:italic;background:none;color:#ffdc8a;-webkit-text-fill-color:#ffdc8a;animation:none}
+  .hero h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(48px,10.5vw,150px);line-height:.9;letter-spacing:-.025em;text-wrap:balance;color:#fff7ed;-webkit-text-fill-color:#fff7ed;text-shadow:0 3px 28px rgba(25,12,18,.32)}
+  .hero h1 .shim{font-style:italic;background:none;color:#ff9f89;-webkit-text-fill-color:#ff9f89;animation:none}
   @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-  .hero p.sub{margin-top:40px;max-width:600px;font-size:18px;font-weight:500;color:#fff9ed}
+  .hero p.sub{margin-top:40px;max-width:600px;font-size:18px;font-weight:500;color:#ffe9dc;text-shadow:0 2px 16px rgba(25,12,18,.35)}
   .hero .cta{margin-top:56px;display:inline-flex;align-items:center;gap:16px;padding:16px 32px;border:1px solid rgba(255,249,237,.55);outline:0;border-radius:999px;background:rgba(251,247,240,.05);box-shadow:none;color:var(--cream);font-size:12px;text-transform:uppercase;letter-spacing:.3em;backdrop-filter:blur(4px);transition:.3s}
   .hero .cta:hover{border-color:rgba(251,247,240,.8);background:rgba(251,247,240,.1)}
   .hero .cta:focus{outline:0}
-  .hero .cta:focus-visible{border-color:#ffe2a0;box-shadow:0 0 0 3px rgba(255,226,160,.3)}
+  .hero .cta:focus-visible{border-color:#ffb39e;box-shadow:0 0 0 3px rgba(255,179,158,.32)}
   .scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:64px;background:rgba(251,247,240,.35);overflow:hidden}
   .scroll-ind::after{content:"";position:absolute;top:0;left:0;width:1px;height:32px;background:var(--cream);animation:scrollDot 2.6s ease-in-out infinite}
   @keyframes scrollDot{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(60px);opacity:0}}
@@ -103,10 +114,16 @@
   }
 
   /* photo placeholders */
-  .frame{position:relative;overflow:hidden;border-radius:2px;background:var(--cream);box-shadow:0 25px 60px -30px rgba(60,20,10,.35);border:1px solid rgba(0,0,0,.05)}
+  .frame{position:relative;overflow:hidden;border-radius:2px;background:var(--surface-pink);box-shadow:0 25px 60px -30px rgba(60,20,10,.35);border:1px solid rgba(237,23,79,.1)}
   .ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;border:1px dashed rgba(241,127,99,.4);background:rgba(246,220,208,.4);border-radius:2px}
   .ph .lbl{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--coral-deep)}
   .ph .hint{margin-top:4px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(90,67,64,.7)}
+  .ph.has-photo{padding:0;overflow:hidden;border:0;background:var(--blush);box-shadow:0 25px 60px -30px rgba(60,20,10,.45)}
+  .ph.has-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+  .ph.college-photo img{object-position:center 18%}
+  .ph.first-office-photo img{object-position:center 22%}
+  .ph.milestones-photo{background:var(--blush)}
+  .ph.milestones-photo img{object-fit:cover;object-position:center}
   .chapter-photo{position:relative;overflow:hidden;border-radius:6px;background:var(--blush);box-shadow:0 25px 60px -30px rgba(60,20,10,.45)}
   .chapter-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
   .family-photo{aspect-ratio:632/419}
@@ -121,12 +138,17 @@
   .quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,36px);line-height:1.3;border-left:2px solid var(--coral);padding-left:24px;margin-top:56px}
   .quote footer{margin-top:12px;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
 
-  .card-note{margin-top:40px;padding:24px;border:1px solid rgba(201,168,106,.5);background:var(--cream);border-radius:2px}
+  .card-note{margin-top:40px;padding:24px;border:1px solid rgba(237,23,79,.35);background:var(--surface-pink);backdrop-filter:blur(4px);border-radius:2px}
   .card-note .h{font-family:var(--hand);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
   .card-note p{margin-top:8px;font-family:var(--serif);font-style:italic;font-size:24px}
 
   /* ch3 background */
-  .ch3-bg{background:linear-gradient(180deg,var(--cream),rgba(246,220,208,.45),var(--cream));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  #chapter-2{border-top:1px solid var(--border)}
+  .ch3-bg{background:rgba(255,239,244,.18);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .ch3-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:72px;align-items:center}
+  .ch3-image-container{width:85%;max-width:425px;justify-self:center;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:6px;border:1px solid rgba(237,23,79,.1);background:rgba(255,229,237,.72);box-shadow:0 25px 60px -30px rgba(86,13,39,.28)}
+  .ch3-image-container .lbl{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--coral-deep)}
+  .ch3-image-container img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
   .stats{margin-top:96px;display:grid;gap:32px;padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   @media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
   .stats .big{font-family:var(--serif);font-size:56px;font-weight:400;color:var(--coral-deep);line-height:1}
@@ -142,7 +164,7 @@
   @media(min-width:768px){.tl{gap:96px}}
   .tl li{position:relative;padding-left:44px}
   @media(min-width:768px){.tl li{padding-left:0;display:grid;grid-template-columns:1fr 1fr;gap:64px}}
-  .tl .dot{position:absolute;left:16px;top:8px;width:12px;height:12px;background:var(--cream);border:1px solid var(--coral);transform:translateX(-50%) rotate(45deg);z-index:2}
+  .tl .dot{position:absolute;left:16px;top:8px;width:12px;height:12px;background:#fff1f6;border:1px solid var(--coral);transform:translateX(-50%) rotate(45deg);z-index:2}
   @media(min-width:768px){.tl .dot{left:50%}}
   .tl .item .year{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
   .tl .item h3{margin-top:8px;font-family:var(--serif);font-size:32px;line-height:1.1}
@@ -154,13 +176,13 @@
 
   /* ch4 oreo */
   .oreo-wrap{position:relative;max-width:410px;margin:0 auto}
-  .oreo-wrap::before{content:"";position:absolute;inset:-48px;background:rgba(246,220,208,.72);filter:blur(55px);border-radius:50%;z-index:-1}
+  .oreo-wrap::before{content:"";position:absolute;inset:-48px;background:rgba(255,229,237,.9);filter:blur(55px);border-radius:50%;z-index:-1}
   #chapter-4 img{display:block;width:100%;aspect-ratio:15/17;object-fit:cover;object-position:center;border-radius:1px;background:#fff;box-shadow:0 30px 70px -38px rgba(60,20,10,.4)}
   .oreo-tag{position:absolute;bottom:-12px;left:24px;transform:rotate(-6deg);font-family:var(--hand);font-size:30px;color:var(--coral-deep)}
 
   /* ch5 dark */
-  .ch5{min-height:860px;background-color:#261311;color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
-  #chapter-5>img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .ch5{min-height:860px;background-color:#9f1239;color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
+  #chapter-5>video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
   .ch5::before{content:"";position:absolute;inset:0;z-index:1;background:
     linear-gradient(90deg,rgba(35,17,15,.8),rgba(48,25,21,.7) 55%,rgba(38,18,16,.84)),
     linear-gradient(180deg,rgba(35,17,15,.22),rgba(35,17,15,.52))}
@@ -183,18 +205,29 @@
   .goals .b{font-size:13px;color:var(--ink-soft)}
   #chapter-6 img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;border-radius:4px;background:var(--blush);box-shadow:0 40px 80px -30px rgba(60,20,10,.35)}
 
+  /* white instant-photo frames for content images only */
+  section.chapter:not(.ch5):not(.invite) img{
+    border:10px solid #fff;
+    border-bottom-width:24px;
+    border-radius:2px;
+    background:#fff;
+    box-shadow:0 22px 44px -24px rgba(71,32,45,.5);
+  }
+
   /* invite */
-  .invite{min-height:900px;padding:115px 0 72px!important;background-color:#2c1917;color:var(--cream);position:relative;overflow:hidden}
-  #invite>img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .invite{min-height:900px;padding:115px 0 72px!important;background-color:#9f1239;color:var(--cream);position:relative;overflow:hidden}
+  #invite>.invite-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block}
+  #invite>.invite-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
   .invite::before{content:"";position:absolute;inset:0;z-index:1;background:
     linear-gradient(180deg,rgba(48,29,26,.72),rgba(39,20,18,.84)),
     radial-gradient(circle at center,rgba(70,42,36,.18),rgba(20,12,11,.48) 100%)}
   .invite .wrap{position:relative;z-index:2;max-width:788px;text-align:center}
   .invite .display{color:var(--cream);font-size:clamp(48px,5.5vw,74px);line-height:.95}
-  .invite .display .shim{background:linear-gradient(90deg,var(--gold),#f2e0b3,var(--gold));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite;font-style:italic}
+  .invite .display .shim{background:linear-gradient(90deg,var(--gold-soft),#ffffff,var(--gold-soft));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite;font-style:italic}
   .youre{font-size:12px;text-transform:uppercase;letter-spacing:.4em;color:var(--gold-soft)}
   .invite-sub{margin:22px auto 0;max-width:500px;color:rgba(251,247,240,.8);font-size:16px}
-  .card{margin-top:48px;background:var(--cream);color:var(--ink);border:1px solid rgba(201,168,106,.4);border-radius:5px;box-shadow:0 50px 120px -40px rgba(0,0,0,.65);text-align:left}
+  .card{margin-top:48px;background:var(--surface-pink);backdrop-filter:blur(8px);color:var(--ink);border:1px solid rgba(237,23,79,.3);border-radius:5px;box-shadow:0 50px 120px -40px rgba(0,0,0,.65);text-align:left}
+  .invite .card{background:rgba(255,241,246,.38);backdrop-filter:blur(3px)}
   .card-grid{display:grid}
   @media(min-width:768px){.card-grid{grid-template-columns:1fr 1fr}}
   .card-col{padding:40px}
@@ -220,17 +253,25 @@
   @media(min-width:768px){.card-foot{flex-direction:row;justify-content:space-between}}
   .card-foot .hand{font-family:var(--hand);font-size:24px;color:var(--coral-deep)}
   .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+  .actions .btn-link{display:none}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:999px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;border:0;font-family:inherit;transition:.3s}
-  .btn-primary{background:var(--coral);color:var(--cream)}
-  .btn-primary:hover{background:var(--coral-deep)}
+  .btn-primary{background:var(--coral-deep);color:var(--cream)}
+  .btn-primary:hover{background:#c51043}
   .btn-ghost{background:transparent;border:1px solid rgba(42,26,24,.2);color:var(--ink)}
   .btn-ghost:hover{border-color:rgba(42,26,24,.6)}
   .btn-link{background:transparent;color:var(--ink-soft);font-size:13px;text-transform:none;letter-spacing:normal;padding:8px 12px}
   .btn-link:hover{color:var(--ink)}
+  .invite .detail dt,
+  .invite .count-lbl,
+  .invite .countdown .clbl,
+  .invite .btn-ghost,
+  .invite .btn-link{color:#9f1239}
+  .invite .btn-ghost{border-color:rgba(159,18,57,.35)}
+  .invite .btn-ghost:hover{border-color:#9f1239}
   .ico{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
   /* footer */
-  .foot{border-top:1px solid var(--border);background:var(--cream);padding:56px 0;text-align:center}
+  .foot{border-top:1px solid var(--border);background:rgba(255,231,239,.78);backdrop-filter:blur(4px);padding:56px 0;text-align:center}
   .foot .row{display:flex;flex-direction:column;gap:16px;align-items:center}
   @media(min-width:768px){.foot .row{flex-direction:row;justify-content:space-between;text-align:left}}
   .foot .brand{font-family:var(--serif);font-style:italic;font-size:24px}
@@ -244,7 +285,8 @@
   .chapter-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
   .chapter-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   .photo-wall{margin-top:96px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
-  .photo-wall .team-photo{grid-column:1/-1;aspect-ratio:3/1}
+  .photo-wall .team-photo{grid-column:1/-1;aspect-ratio:1080/530}
+  .photo-wall .team-photo img{object-position:center}
 
   @media(min-width:768px){
     #chapter-2 .grid{align-items:start}
@@ -256,6 +298,7 @@
   }
 
   @media(max-width:767px){
+    section.chapter:not(.ch5):not(.invite) img{border-width:7px;border-bottom-width:17px}
     .wrap{width:100%;padding-inline:20px}
     .topbar{mix-blend-mode:normal;color:var(--cream);background:linear-gradient(180deg,rgba(26,15,14,.88),rgba(26,15,14,.5),transparent)}
     .topbar .inner{padding:16px 20px;gap:12px}
@@ -267,11 +310,13 @@
     .hero h1{font-size:clamp(42px,13vw,68px);line-height:.94}
     .hero p.sub{margin-top:28px;font-size:16px}
     .hero .cta{margin-top:36px;padding:14px 22px;letter-spacing:.2em}
-    .kicker-line{gap:8px;margin-bottom:24px;font-size:11px;letter-spacing:.2em}
-    .kicker-line span.rule{width:28px}
+    .hero .kicker-line{width:min(78vw,260px);justify-content:center;gap:10px;margin-bottom:24px;color:#ffc6aa;font-size:12px;font-weight:700;letter-spacing:.22em;white-space:nowrap;text-shadow:0 2px 8px rgba(35,18,26,.7)}
+    .hero .kicker-line span.rule{width:34px;background:#ffc6aa;opacity:.9}
     .scroll-ind{bottom:20px;height:48px}
 
     section.chapter{padding:88px 0}
+    .ch3-intro{grid-template-columns:1fr;gap:40px}
+    .ch3-image-container{width:100%;max-width:none;aspect-ratio:1/1}
     .grid{gap:48px}
     #chapter-2 .grid>.c-7{order:2}
     #chapter-2 .grid>.c-5{order:1;padding-top:0!important}
@@ -364,6 +409,8 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
     .interactive-3d,.interactive-button{transform:rotate(var(--base-rotate,0deg))!important}
+    #chapter-5>video{display:none}
+    .ch5{background-image:url("resilience.jpg");background-size:cover;background-position:center}
   }
 </style>
 </head>
@@ -383,8 +430,10 @@
 
 <!-- HERO -->
 <section id="welcome" class="hero">
-  <!-- HERO IMAGE: added directly with an img tag -->
-  <img src="hero-silk.jpg" alt="Flowing silk background">
+  <picture class="hero-media">
+    <source media="(max-width: 767px)" srcset="mam.png">
+    <img src="mam.png" alt="Bhargavi celebrating with Oreo beside a decorated palace pool at sunset">
+  </picture>
   <div class="center">
     <div class="kicker-line"><span class="rule"></span>A Love Letter<span class="rule"></span></div>
     <h1>
@@ -392,7 +441,7 @@
       <span class="shim">Countless Lessons.</span><br>
       <span>Endless Gratitude.</span>
     </h1>
-    <p class="sub">A quiet cinema of the life of <span class="serif" style="font-style:italic">Bhargavi</span> — told in seven chapters.</p>
+    <p class="sub">A quiet cinema of the life of<span class="serif" style="font-style:italic">Bhargavi</span> — told in seven chapters.</p>
     <a href="#chapter-1" class="cta">Begin the Journey
       <svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
@@ -417,11 +466,11 @@
       <div class="c-7">
         <div class="chapter-gallery">
           <figure class="chapter-photo ar-34 tilt-l reveal" style="grid-column:1/span 3">
-            <img src="Bhargavi.jpg" alt="Young Bhargavi smiling in a colourful room with books and toys" loading="lazy">
+            <img src="Bhargavi1.png" alt="Young Bhargavi smiling in a striped T-shirt" loading="lazy">
           </figure>
           <figure class="chapter-photo ar-45 tilt-r reveal d1" style="grid-column:4/span 3;margin-top:64px">
             <!-- CHAPTER I IMAGE: added directly with an img tag -->
-            <img src="peony.jpg" alt="A bouquet of bright pink peonies" loading="lazy">
+            <img src="brother.png" alt="Bhargavi sharing a joyful hug with her brother" loading="lazy">
           </figure>
           <figure class="chapter-photo family-photo reveal d2" style="grid-column:1/-1">
             <img src="Family.jpg" alt="Bhargavi with her family gathered together" loading="lazy">
@@ -439,8 +488,12 @@
     <div class="grid g-12">
       <div class="c-7">
         <div class="chapter-pair">
-          <div class="ph ar-34 tilt-l reveal"><div><div class="lbl">School Days</div></div></div>
-          <div class="ph ar-34 tilt-r reveal d1" style="margin-top:64px"><div><div class="lbl">College</div></div></div>
+          <div class="ph has-photo ar-34 tilt-l reveal">
+            <img src="school.png" alt="Bhargavi smiling outdoors in her school uniform" loading="lazy">
+          </div>
+          <div class="ph has-photo college-photo ar-34 tilt-r reveal d1" style="margin-top:64px">
+            <img src="college.png" alt="Bhargavi standing in front of the Indian Institute of Management Bangalore sign" loading="lazy">
+          </div>
         </div>
         <blockquote class="quote reveal d2">"I used to write my dreams on the last page of my notebook. Then I ran out of pages."
           <footer>— a teenager, still learning</footer>
@@ -462,10 +515,15 @@
 <!-- CHAPTER III -->
 <section id="chapter-3" class="chapter ch3-bg">
   <div class="wrap">
-    <div style="max-width:720px">
-      <div class="kicker reveal"><span class="rn">Chapter III</span><span class="rule"></span><span class="name">Building My Own Story</span></div>
-      <h2 class="display reveal d1"><em>Digital Go Where</em> — and how it went everywhere.</h2>
-      <p class="body-text reveal d2">Every company is really a scrapbook of Mondays. Here are a few pages worth framing — the milestones, the mistakes, and the people who made both worth it.</p>
+    <div class="ch3-intro">
+      <div>
+        <div class="kicker reveal"><span class="rn">Chapter III</span><span class="rule"></span><span class="name">Building My Own Story</span></div>
+        <h2 class="display reveal d1"><em>Digital Go Where</em> — and how it went everywhere.</h2>
+        <p class="body-text reveal d2">Every company is really a scrapbook of Mondays. Here are a few pages worth framing — the milestones, the mistakes, and the people who made both worth it.</p>
+      </div>
+      <figure class="ch3-image-container reveal d2">
+        <img src="dgw.png" alt="The Digital Go Where team gathered with Oreo beneath the company logo" loading="lazy">
+      </figure>
     </div>
 
     <div class="timeline">
@@ -483,12 +541,20 @@
 
     <div class="photo-wall">
       <figure class="chapter-photo team-photo reveal">
-        <img src="Team.jpg" alt="Bhargavi standing with her team in front of a red backdrop" loading="lazy">
+        <img src="team-ganesh-celebration.jpg" alt="Bhargavi celebrating Ganesh Chaturthi with her team" loading="lazy">
       </figure>
-      <div class="ph ar-43 tilt-r reveal d1" style="margin-top:40px"><div><div class="lbl">First Office</div></div></div>
-      <div class="ph ar-43 tilt-l reveal d2"><div><div class="lbl">An Award Night</div></div></div>
-      <div class="ph ar-43 tilt-r reveal d1" style="margin-top:40px"><div><div class="lbl">Team Moments</div></div></div>
-      <div class="ph ar-43 tilt-l reveal d2"><div><div class="lbl">Milestones</div></div></div>
+      <div class="ph has-photo first-office-photo ar-43 tilt-r reveal d1" style="margin-top:40px">
+        <img src="1st.jpg" alt="Bhargavi holding her 10,000 Women certificate of completion" loading="lazy">
+      </div>
+      <div class="ph has-photo ar-43 tilt-l reveal d2">
+        <img src="award-night.png" alt="Bhargavi receiving a trophy on stage at an award ceremony" loading="lazy">
+      </div>
+      <div class="ph has-photo ar-43 tilt-r reveal d1" style="margin-top:40px">
+        <img src="3rd.png" alt="Bhargavi receiving a commemorative award during a team event" loading="lazy">
+      </div>
+      <div class="ph has-photo milestones-photo ar-43 tilt-l reveal d2">
+        <img src="milestones-certificate.png" alt="Bhargavi receiving a Rich Ponders Club certificate at an event" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
@@ -500,7 +566,7 @@
       <div class="c-6">
         <div class="oreo-wrap reveal">
           <!-- CHAPTER IV OREO IMAGE: added directly with an img tag -->
-          <img src="oreo-new.jpg" alt="Oreo, a smiling golden Labrador puppy wearing a blue collar" loading="lazy">
+          <img src="oreo.jpg" alt="Bhargavi celebrating beside Oreo, her golden Labrador" loading="lazy">
           <div class="oreo-tag">my Oreo ♥</div>
         </div>
       </div>
@@ -519,8 +585,9 @@
 
 <!-- CHAPTER V -->
 <section id="chapter-5" class="chapter ch5">
-  <!-- CHAPTER V IMAGE: added directly with an img tag -->
-  <img src="resilience.jpg" alt="A reflective scene representing resilience" loading="lazy">
+  <video autoplay muted loop playsinline preload="metadata" poster="resilience.jpg" aria-hidden="true">
+    <source src="rain (2).mp4" type="video/mp4">
+  </video>
   <div class="wrap">
     <div class="kicker reveal" style="color:var(--gold-soft)"><span class="rn">Chapter V</span><span class="rule"></span><span class="name">Life's Toughest Chapters</span></div>
     <h2 class="display reveal d1">Rain doesn't ruin the story. <em>It writes it.</em></h2>
@@ -555,8 +622,10 @@
 
 <!-- INVITATION -->
 <section id="invite" class="chapter invite">
-  <!-- INVITATION IMAGE: added directly with an img tag -->
-  <img src="celebration.jpg" alt="Colourful birthday celebration" loading="lazy">
+  <picture class="invite-media">
+    <source media="(max-width: 767px)" srcset="mobiles.png">
+    <img src="invitation-flamingo-bg.png" alt="Flamingos gathered in a palace pool at sunset" loading="lazy">
+  </picture>
   <div class="wrap">
     <div class="youre reveal">You're Invited</div>
     <h2 class="display reveal d1" style="margin-top:24px">A day worth <span class="shim">forty</span>.</h2>
@@ -595,10 +664,6 @@
       <div class="card-foot">
         <p class="hand">Bhargavi is turning forty — and so are the memories.</p>
         <div class="actions">
-          <button class="btn btn-primary" id="rsvpBtn">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
-            <span id="rsvpLabel">See you there</span>
-          </button>
           <button class="btn btn-ghost" id="shareBtn">
             <svg class="ico" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
             Share
@@ -747,7 +812,7 @@ tick(); setInterval(tick,1000);
 /* ---------- Confetti ---------- */
 const canvas = document.getElementById('confetti');
 const ctx = canvas.getContext('2d');
-const COLORS = ['#F17F63','#FBB77C','#F5C0A5','#E88A9E','#EFD9A6','#FBF7F0'];
+const COLORS = ['#ED174F','#FC8EAC','#F4B400','#FFE28A','#FFE5ED','#FFFFFF'];
 let pieces = [];
 function resize(){ canvas.width=innerWidth*devicePixelRatio; canvas.height=innerHeight*devicePixelRatio; canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px'; }
 resize(); addEventListener('resize',resize);
@@ -788,11 +853,6 @@ const inviteIO = new IntersectionObserver((entries)=>{
 inviteIO.observe(document.getElementById('invite'));
 
 /* buttons */
-document.getElementById('rsvpBtn').addEventListener('click',(e)=>{
-  const r=e.currentTarget.getBoundingClientRect();
-  fire(180,{x:r.left+r.width/2,y:r.top});
-  document.getElementById('rsvpLabel').textContent='See you there ❤';
-});
 document.getElementById('shareBtn').addEventListener('click', async ()=>{
   const url = location.href;
   const text = `40 Years of Bhargavi — join the celebration on 1 August. ${url}`;
@@ -805,7 +865,7 @@ document.getElementById('shareBtn').addEventListener('click', async ()=>{
 const canHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
 const reduceMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
 if(canHover && !reduceMotion){
-  document.querySelectorAll('.ph,.chapter-photo,.oreo-wrap,#chapter-6 img,.photo-wall .frame').forEach(el=>{
+  document.querySelectorAll('.ph,.chapter-photo,.ch3-image-container,.oreo-wrap,#chapter-6 img,.photo-wall .frame').forEach(el=>{
     el.classList.add('interactive-3d');
     el.addEventListener('pointermove',e=>{
       const r=el.getBoundingClientRect();
