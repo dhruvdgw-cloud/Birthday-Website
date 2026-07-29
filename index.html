@@ -265,12 +265,9 @@
   .invite .count-lbl,
   .invite .countdown .clbl,
   .invite .btn-ghost,
-  .invite .btn-link,
-  .invite .card-foot .hand,
-  .invite .detail a{color:#e8c8d1}
-  .invite .btn-ghost{border-color:rgba(232,200,209,.55)}
-  .invite .btn-ghost:hover{border-color:#e8c8d1}
-  .flamingo-pop{position:fixed;z-index:61;pointer-events:none;user-select:none;line-height:1;filter:drop-shadow(0 4px 8px rgba(60,20,35,.25))}
+  .invite .btn-link{color:#9f1239}
+  .invite .btn-ghost{border-color:rgba(159,18,57,.35)}
+  .invite .btn-ghost:hover{border-color:#9f1239}
   .ico{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
   /* footer */
@@ -444,7 +441,7 @@
       <span class="shim">Countless Lessons.</span><br>
       <span>Endless Gratitude.</span>
     </h1>
-    <p class="sub">A quiet cinema of the life of <span class="serif" style="font-style:italic">Bhargavi</span> — told in seven chapters.</p>
+    <p class="sub">A quiet cinema of the life of<span class="serif" style="font-style:italic">Bhargavi</span> — told in seven chapters.</p>
     <a href="#chapter-1" class="cta">Begin the Journey
       <svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
@@ -544,7 +541,7 @@
 
     <div class="photo-wall">
       <figure class="chapter-photo team-photo reveal">
-        <img src="team-ganesh-celebration.jpg" alt="Bhargavi celebrating Ganesh Chaturthi with her team" loading="lazy">
+        <img src="Team.jpg" alt="Bhargavi celebrating Ganesh Chaturthi with her team" loading="lazy">
       </figure>
       <div class="ph has-photo first-office-photo ar-43 tilt-r reveal d1" style="margin-top:40px">
         <img src="1st.jpg" alt="Bhargavi holding her 10,000 Women certificate of completion" loading="lazy">
@@ -647,7 +644,7 @@
             </a>
           </dd></dl>
           <dl class="detail"><dt>Afternoon</dt><dd>A pool waits. Bring your swimsuit.</dd></dl>
-          <dl class="detail"><dt>Evening</dt><dd>Dress as colourful as a flamingo</dd></dl>
+          <dl class="detail"><dt>Evening</dt><dd>Dress as colourful as a flamingo 🦩</dd></dl>
         </div>
         <div class="card-col dont">
           <div class="card-h">Don't Forget</div>
@@ -667,10 +664,6 @@
       <div class="card-foot">
         <p class="hand">Bhargavi is turning forty — and so are the memories.</p>
         <div class="actions">
-          <button class="btn btn-primary" id="rsvpBtn">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
-            <span id="rsvpLabel">See you there</span>
-          </button>
           <button class="btn btn-ghost" id="shareBtn">
             <svg class="ico" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
             Share
@@ -840,34 +833,13 @@ function loop(){
   requestAnimationFrame(loop);
 }
 loop();
-function fire(count=140, origin, ballsOnly=false){
+function fire(count=140, origin){
   const ox = origin?.x ?? innerWidth/2;
   const oy = origin?.y ?? innerHeight*0.35;
   for(let i=0;i<count;i++){
     const a = Math.random()*Math.PI*2;
     const s = 4+Math.random()*8;
-    pieces.push({x:ox,y:oy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,rot:Math.random()*360,vr:(Math.random()-.5)*12,size:3+Math.random()*5,color:COLORS[Math.floor(Math.random()*COLORS.length)],shape:ballsOnly?'circle':(Math.random()>.5?'rect':'circle')});
-  }
-}
-function launchFlamingos(origin){
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  for(let i=0;i<16;i++){
-    const bird=document.createElement('span');
-    bird.className='flamingo-pop';
-    bird.textContent='🦩';
-    bird.style.left=`${origin.x}px`;
-    bird.style.top=`${origin.y}px`;
-    bird.style.fontSize=`${26+Math.random()*24}px`;
-    document.body.appendChild(bird);
-    const drift=(Math.random()-.5)*Math.min(innerWidth*.75,700);
-    const rise=innerHeight*(.55+Math.random()*.45);
-    const turn=(Math.random()-.5)*38;
-    bird.animate([
-      {transform:'translate(-50%,0) scale(.45) rotate(0deg)',opacity:0},
-      {transform:`translate(calc(-50% + ${drift*.2}px),-${rise*.2}px) scale(1) rotate(${turn*.3}deg)`,opacity:1,offset:.18},
-      {transform:`translate(calc(-50% + ${drift}px),-${rise}px) scale(.85) rotate(${turn}deg)`,opacity:0}
-    ],{duration:1600+Math.random()*900,delay:i*35,easing:'cubic-bezier(.2,.75,.25,1)',fill:'forwards'})
-      .finished.finally(()=>bird.remove());
+    pieces.push({x:ox,y:oy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,rot:Math.random()*360,vr:(Math.random()-.5)*12,size:3+Math.random()*5,color:COLORS[Math.floor(Math.random()*COLORS.length)],shape:Math.random()>.5?'rect':'circle'});
   }
 }
 
@@ -881,13 +853,6 @@ const inviteIO = new IntersectionObserver((entries)=>{
 inviteIO.observe(document.getElementById('invite'));
 
 /* buttons */
-document.getElementById('rsvpBtn').addEventListener('click',(e)=>{
-  const r=e.currentTarget.getBoundingClientRect();
-  const origin={x:r.left+r.width/2,y:r.top+r.height/2};
-  fire(190,origin,true);
-  launchFlamingos(origin);
-  document.getElementById('rsvpLabel').textContent='See you there';
-});
 document.getElementById('shareBtn').addEventListener('click', async ()=>{
   const url = location.href;
   const text = `40 Years of Bhargavi — join the celebration on 1 August. ${url}`;
