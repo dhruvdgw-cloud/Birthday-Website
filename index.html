@@ -118,10 +118,13 @@
   .journey-viewport{width:100%;padding-block:42px;overflow:hidden;border-radius:8px;cursor:grab;touch-action:pan-y}
   .journey-viewport.is-dragging{cursor:grabbing}
   .journey-track{display:flex;width:max-content;gap:clamp(12px,1.4vw,22px);align-items:center;will-change:transform;transition:transform .65s cubic-bezier(.22,1,.36,1)}
-  .journey-slide{flex:0 0 clamp(130px,16vw,230px);width:clamp(130px,16vw,230px);aspect-ratio:1658/2608;padding:0;overflow:hidden;border:0;border-radius:7px;background:transparent;box-shadow:none;transform:scale(.88);transform-origin:center;transition:transform .65s cubic-bezier(.22,1,.36,1),opacity .65s ease;opacity:.52}
+  .journey-slide{flex:0 0 clamp(130px,16vw,230px);width:clamp(130px,16vw,230px);aspect-ratio:1/1;padding:4px;overflow:hidden;border:1px solid rgba(255,255,255,.9);border-radius:5px;background:#fff;box-shadow:none;transform:scale(.88);transform-origin:center;transition:transform .65s cubic-bezier(.22,1,.36,1),opacity .65s ease;opacity:.52}
   .journey-slide.is-active{z-index:2;transform:scale(1.16);opacity:1;box-shadow:none}
-  .journey-slide img{width:100%;height:100%;object-fit:contain;border:0!important;border-radius:3px!important;box-shadow:none!important;pointer-events:none;user-select:none}
-  .journey-slide.journey-slide--phase6{aspect-ratio:2181/3234}
+  .journey-slide img{width:100%;height:100%;object-fit:cover;border:0!important;border-radius:2px!important;box-shadow:none!important;pointer-events:none;user-select:none}
+  .journey-slide.journey-slide--square{aspect-ratio:1/1}
+  .journey-slide.journey-slide--portrait-4x5{aspect-ratio:4/5}
+  .journey-slide.journey-slide--portrait-3x4{aspect-ratio:3/4}
+  .journey-slide.journey-slide--landscape{aspect-ratio:16/9}
   .carousel-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:34px}
   .carousel-btn{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--border);border-radius:50%;background:#fff;color:var(--coral-deep);cursor:pointer;transition:transform .25s,background .25s}
   .carousel-btn:hover{transform:translateY(-2px);background:var(--blush)}
@@ -384,8 +387,13 @@
   .foot .row{display:flex;flex-direction:column;gap:16px;align-items:center}
   @media(min-width:768px){.foot .row{flex-direction:row;justify-content:space-between;text-align:left}}
   .foot .brand{font-family:var(--serif);font-style:italic;font-size:24px}
-  .foot .sub{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
-  .foot .thanks{font-family:var(--hand);font-size:22px;color:var(--coral-deep)}
+  .foot .details{display:grid;gap:7px;text-align:center}
+  .foot .rsvp{font-family:var(--hand);font-size:22px;color:var(--coral-deep)}
+  .foot .rsvp-contacts{display:grid;gap:3px;color:var(--ink-soft);font-size:13px;line-height:1.5}
+  .foot address{color:var(--ink-soft);font-size:13px;font-style:normal;line-height:1.5}
+  .foot address a{color:var(--coral-deep);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;transition:color .25s ease,text-decoration-color .25s ease}
+  .foot address a:hover,.foot address a:focus-visible{color:#b80e3d;text-decoration-thickness:2px}
+  @media(min-width:768px){.foot .details{text-align:right}}
 
   /* WhatsApp contact */
   .whatsapp-float{
@@ -623,13 +631,13 @@
     <div class="journey-shell reveal" aria-roledescription="carousel" aria-label="Bhargavi's journey in photographs">
       <div class="journey-viewport" id="journeyViewport">
         <div class="journey-track" id="journeyTrack">
-          <figure class="journey-slide"><img src="phase1.png" alt="Young Bhargavi smiling in a striped T-shirt"></figure>
-          <figure class="journey-slide"><img src="phase22.png" alt="Bhargavi smiling outdoors in her school uniform" loading="lazy"></figure>
-          <figure class="journey-slide"><img src="phase2.png" alt="Bhargavi during her school years" loading="lazy"></figure>
-          <figure class="journey-slide"><img src="phase4.png" alt="Another chapter from Bhargavi's journey" loading="lazy"></figure>
-          <figure class="journey-slide"><img src="phase5.png" alt="A memorable chapter from Bhargavi's journey" loading="lazy"></figure>
-          <figure class="journey-slide journey-slide--phase6"><img src="phase6.png" alt="A special chapter from Bhargavi's journey" loading="lazy"></figure>
-          <figure class="journey-slide"><img src="phase7.png" alt="Another special chapter from Bhargavi's journey" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--square"><img src="phase1.1.png" alt="Young Bhargavi smiling outdoors"></figure>
+          <figure class="journey-slide journey-slide--portrait-4x5"><img src="phase1.2.png" alt="Bhargavi during her school years" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--square"><img src="phase1.3.png" alt="Bhargavi in a pink dress" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--portrait-3x4"><img src="phase1.4.png" alt="Bhargavi at Singapore's indoor waterfall" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--square"><img src="phase1.5.png" alt="Bhargavi smiling in a blue dress" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--square"><img src="phase1.6.png" alt="Bhargavi at Symbiosis Pune" loading="lazy"></figure>
+          <figure class="journey-slide journey-slide--square"><img src="phase1.7.jpg" alt="Bhargavi with the Digital Go Where team" loading="lazy"></figure>
         </div>
       </div>
       <div class="carousel-controls">
@@ -750,7 +758,7 @@
         <div class="actions">
           <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Rawla+Lohgarh%2C+Kota%2C+Rajasthan" target="_blank" rel="noopener noreferrer" aria-label="Open Rawla Lohgarh, Kota in Google Maps">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            View Location
+            Find On Map
           </a>
           <a class="btn btn-ghost" href="stay.html">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19v-9M21 19v-5a2 2 0 00-2-2H3v7M3 16h18"/><path d="M7 12V9h5a3 3 0 013 3"/><circle cx="6" cy="9" r="1.5"/></svg>
@@ -768,10 +776,16 @@
 
 <footer class="foot">
   <div class="wrap row">
-    <div>
-      <div class="brand">Bhargavi · 40</div>
+    <div class="brand">Bhargavi · 40</div>
+    <div class="details">
+      <div class="rsvp">RSVP</div>
+      <div class="rsvp-contacts">
+        <span>Mahiman — 99291 12303</span>
+        <span>Bhargavi — 95218 70119</span>
+        <span>Kritika — 93631 17111</span>
+      </div>
+      <address><a href="https://www.google.com/maps/place/B-94,+Vallabh+Nagar,+Gumanpura,+Kota,+Rajasthan+324007/@25.1683537,75.8442579,17z/data=!3m1!4b1!4m6!3m5!1s0x396f9b2c88af38f9:0x5ba8893974da3ec9!8m2!3d25.1683489!4d75.8468328!16s%2Fg%2F11fsjqvjhb?entry=ttu&amp;g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">B-94, Vallabh Nagar, Kota — 324007</a></address>
     </div>
-    <div class="thanks">Thank you for being part of the story.</div>
   </div>
 </footer>
 
