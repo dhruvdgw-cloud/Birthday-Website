@@ -188,11 +188,6 @@
   .invite-gallery-next{right:max(16px,3vw);top:50%;transform:translateY(-50%)}
   body.gallery-open{overflow:hidden}
 
-  .closing-venue-image{position:relative;width:100vw;height:100vh;height:100svh;max-width:none;margin:0;overflow:hidden;border-radius:0;background:url("invitation-flamingo-bg.png") center/cover no-repeat}
-  .closing-venue-image::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(35,17,20,.72),rgba(48,25,29,.6) 52%,rgba(35,17,20,.72)),linear-gradient(180deg,rgba(35,17,20,.22),rgba(35,17,20,.46))}
-  .closing-venue-message{position:absolute;z-index:2;top:50%;left:50%;width:96vw;transform:translate(-50%,-50%);text-align:center;font-family:var(--serif);font-size:clamp(34px,3.8vw,72px);font-weight:400;line-height:1;letter-spacing:-.025em;color:var(--cream);text-shadow:0 3px 24px rgba(20,8,12,.42)}
-  .closing-venue-message span,.closing-venue-message em{display:block;white-space:nowrap}
-  .closing-venue-message em{font-size:1.4em;font-style:italic;color:#e4bd7d}
   .faq-list{max-width:820px;margin:72px auto 0;border-top:1px solid var(--border)}
   .faq-item{border-bottom:1px solid var(--border)}
   .faq-item summary{display:flex;justify-content:space-between;gap:20px;padding:24px 4px;cursor:pointer;font-family:var(--serif);font-size:24px;list-style:none}
@@ -493,8 +488,6 @@
     .invite-tab .tab-title{margin-top:0}
     .invite-card-icon{width:32px;height:32px;margin-bottom:10px}
     .invite-actions{flex-direction:column;text-align:center}
-    .closing-venue-image{height:clamp(330px,42svh,400px);min-height:0;background-position:center 48%}
-    .closing-venue-message{top:50%;width:96vw;font-size:clamp(21px,6.4vw,30px)}
 
     .lessons{gap:32px}
     .ch5 .big-quote{margin-top:56px}
@@ -658,13 +651,6 @@
     </div>
   </div>
 </section>
-
-<figure class="closing-venue-image reveal" role="img" aria-label="Flamingo-filled pool beneath ornate arches at sunset">
-  <figcaption class="closing-venue-message">
-    <span>Can’t Wait to See You at the</span>
-    <em>Flamingo Fiesta!</em>
-  </figcaption>
-</figure>
 
 <!-- INVITATION -->
 <section id="invite" class="chapter invite">
