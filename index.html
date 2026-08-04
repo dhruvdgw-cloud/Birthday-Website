@@ -65,16 +65,6 @@
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-  /* top bar */
-  .topbar{position:fixed;inset:0 0 auto 0;z-index:30;color:var(--cream)}
-  .topbar .inner{position:relative;display:flex;justify-content:space-between;align-items:center;padding:24px 24px;max-width:1400px;margin:0 auto}
-  .topbar .mid{display:none;font-size:11px;text-transform:uppercase;letter-spacing:.35em}
-  .topbar .inner>span:first-child,
-  .topbar .inner>span:last-child{color:#ffc6aa;text-shadow:0 1px 10px rgba(42,26,24,.3);transition:color .35s ease,text-shadow .35s ease}
-  .topbar.past-hero .inner>span:first-child,
-  .topbar.past-hero .inner>span:last-child{color:#17100f;text-shadow:none}
-  @media(min-width:768px){.topbar .mid{display:block;position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}.topbar .inner{padding:24px 40px}}
-
   /* chapter nav */
   .chapnav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:40;display:none}
   @media(min-width:1024px){.chapnav{display:block}}
@@ -447,11 +437,6 @@
   @media(max-width:767px){
     section.chapter:not(.ch5):not(.invite) img{border-width:7px;border-bottom-width:17px}
     .wrap{width:100%;padding-inline:20px}
-    .topbar{mix-blend-mode:normal;color:var(--cream);background:linear-gradient(180deg,rgba(26,15,14,.88),rgba(26,15,14,.5),transparent)}
-    .topbar .inner{padding:16px 20px;gap:12px}
-    .topbar .inner>span:first-child{font-size:16px!important;white-space:nowrap}
-    .topbar .inner>span:last-child{font-size:18px!important;white-space:nowrap}
-
     .hero{width:100vw;max-width:none;height:100vh;height:100svh;min-height:100vh;min-height:100svh;max-height:100vh;max-height:100svh}
     .hero .center{height:100vh;height:100svh;min-height:0;justify-content:flex-start;align-items:center;text-align:center;padding:50vh 20px 20px;padding-top:50svh}
     #welcome>.hero-media img{object-position:64% center}
@@ -531,7 +516,6 @@
 
   @media(max-width:420px){
     .wrap{padding-inline:16px}
-    .topbar .inner{padding-inline:16px}
     .hero .center{padding-inline:16px}
     .hero h1{font-size:clamp(32px,10.5vw,44px)}
     .chapter-pair{grid-template-columns:1fr}
@@ -594,13 +578,6 @@
 </head>
 <body>
 
-<header class="topbar">
-  <div class="inner">
-    <span class="serif" style="font-style:italic;font-size:18px">Bhargavi · 40</span>
-    <span class="mid">A Cinematic Journey</span>
-  </div>
-</header>
-
 <nav class="chapnav" aria-label="Chapters">
   <ul id="chapNav"></ul>
 </nav>
@@ -653,7 +630,6 @@
           <figure class="journey-slide journey-slide--portrait-4x5"><img src="together.jpeg" alt="Bhargavi standing with her mother in matching blush celebration outfits" loading="lazy"></figure>
           <figure class="journey-slide journey-slide--portrait-4x5"><img src="bigmon.jpg" alt="Bhargavi's mother wearing a floral turquoise sari" loading="lazy"></figure>
           <figure class="journey-slide journey-slide--square"><img src="oreos.png" alt="Bhargavi holding Oreo as a puppy" loading="lazy"></figure>
-          <figure class="journey-slide journey-slide--portrait-4x5"><img src="london.png" alt="Bhargavi and her mother standing beside Tower Bridge in London" loading="lazy"></figure>
         </div>
       </div>
       <div class="carousel-controls">
@@ -802,16 +778,9 @@ CHAPTERS.forEach(c=>{
   nav.appendChild(li);
 });
 const navLinks = [...nav.querySelectorAll('a')];
-const topbar = document.querySelector('.topbar');
 const heroSection = document.querySelector('.hero');
 const invitationSection = document.getElementById('invite');
 heroSection.insertAdjacentElement('afterend', invitationSection);
-function updateTopbarColor(){
-  topbar.classList.toggle('past-hero',heroSection.getBoundingClientRect().bottom<=80);
-}
-document.addEventListener('scroll',updateTopbarColor,{passive:true});
-window.addEventListener('resize',updateTopbarColor);
-updateTopbarColor();
 
 const navIO = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
@@ -829,7 +798,7 @@ const revIO = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
 
 /* ---------- Countdown ---------- */
-const TARGET = new Date('2026-08-07T00:00:00+05:30').getTime();
+const TARGET = new Date('2026-08-08T00:00:00+05:30').getTime();
 const reduceAnimations = matchMedia('(prefers-reduced-motion:reduce)').matches;
 const last = {d:null,h:null,m:null,s:null};
 function tick(){
@@ -909,9 +878,17 @@ function moveJourney(direction){
 }
 function startJourneyAutoplay(){
   stopJourneyAutoplay();
-  if(!reduceAnimations) journeyTimer=setInterval(()=>moveJourney(1),2800);
+  if(reduceAnimations) return;
+  const isMobile=window.innerWidth<768;
+  const firstDelay=isMobile?1400:2800;
+  const interval=isMobile?2400:2800;
+  const advance=()=>{
+    moveJourney(1);
+    journeyTimer=setTimeout(advance,interval);
+  };
+  journeyTimer=setTimeout(advance,firstDelay);
 }
-function stopJourneyAutoplay(){clearInterval(journeyTimer)}
+function stopJourneyAutoplay(){clearTimeout(journeyTimer)}
 
 // One navigation dot for each original photograph.
 originalJourneySlides.forEach((_,index)=>{
