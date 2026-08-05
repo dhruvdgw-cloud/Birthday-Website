@@ -404,13 +404,17 @@
   /* WhatsApp contact */
   .whatsapp-float{
     position:fixed;right:24px;bottom:24px;z-index:70;
-    display:grid;place-items:center;width:62px;height:62px;
-    border:4px solid #fff;border-radius:50%;background:#25d366;color:#fff;text-decoration:none;
-    box-shadow:0 12px 30px rgba(15,81,50,.3);
-    transition:transform .25s,background .25s,box-shadow .25s;
+    display:grid;place-items:center;width:52px;height:52px;
+    border:2px solid #d8a94e;border-radius:50%;background:transparent;color:#fff;text-decoration:none;
+    box-shadow:0 3px 10px rgba(36,18,25,.32),0 0 0 1px rgba(255,226,138,.12);
+    transition:transform .25s,border-color .25s,box-shadow .25s;
   }
-  .whatsapp-float:hover{transform:translateY(-3px);background:#1ebe5d;box-shadow:0 16px 34px rgba(15,81,50,.38)}
-  .whatsapp-float svg{width:42px;height:42px;fill:currentColor}
+  .whatsapp-float:hover{transform:translateY(-3px);border-color:var(--gold-soft);box-shadow:0 6px 16px rgba(36,18,25,.4),0 0 0 2px rgba(255,226,138,.14)}
+  .whatsapp-float:focus-visible{outline:2px solid var(--gold-soft);outline-offset:4px}
+  .whatsapp-float.on-pink{border-color:var(--coral-deep);color:var(--coral-deep);box-shadow:0 3px 10px rgba(159,18,57,.22),0 0 0 1px rgba(252,142,172,.14)}
+  .whatsapp-float.on-pink:hover{border-color:#b80e3d;color:#b80e3d;box-shadow:0 6px 16px rgba(159,18,57,.3),0 0 0 2px rgba(252,142,172,.16)}
+  .whatsapp-float.on-pink:focus-visible{outline-color:var(--coral)}
+  .whatsapp-float svg{width:31px;height:31px;fill:currentColor}
 
   /* confetti */
   #confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
@@ -524,8 +528,8 @@
     .invite-tabs{padding-top:40px}
     .invite-tab{min-height:190px}
     .countdown .clbl{font-size:9px;letter-spacing:.18em}
-    .whatsapp-float{right:16px;bottom:16px;width:58px;height:58px}
-    .whatsapp-float svg{width:39px;height:39px}
+    .whatsapp-float{right:16px;bottom:16px;width:50px;height:50px}
+    .whatsapp-float svg{width:30px;height:30px}
   }
 
   /* lightweight 3D hover interactions */
@@ -749,6 +753,23 @@
 <canvas id="confetti"></canvas>
 
 <script>
+/* ---------- Context-aware WhatsApp colour ---------- */
+const whatsappFloat=document.querySelector('.whatsapp-float');
+const syncWhatsAppColour=()=>{
+  const box=whatsappFloat.getBoundingClientRect();
+  const layers=document.elementsFromPoint(box.left+box.width/2,box.top+box.height/2);
+  const pinkSurface=layers.some(el=>el.closest?.('#short-journey, #invite, .foot'));
+  whatsappFloat.classList.toggle('on-pink',pinkSurface);
+};
+let whatsappColourFrame;
+const queueWhatsAppColour=()=>{
+  cancelAnimationFrame(whatsappColourFrame);
+  whatsappColourFrame=requestAnimationFrame(syncWhatsAppColour);
+};
+syncWhatsAppColour();
+window.addEventListener('scroll',queueWhatsAppColour,{passive:true});
+window.addEventListener('resize',queueWhatsAppColour);
+
 /* ---------- Chapter nav ---------- */
 const CHAPTERS = [
   {id:'welcome',label:'Welcome',roman:'—'},
