@@ -20,7 +20,8 @@
       --sans:"Inter",system-ui,sans-serif;
     }
     *{box-sizing:border-box}
-    html{min-height:100%;background:#fde9ee}
+    html{min-height:100%;background:#fde9ee;scrollbar-width:none;-ms-overflow-style:none}
+    html::-webkit-scrollbar{display:none}
     body{
       min-height:100vh;margin:0;color:var(--ink);font-family:var(--sans);
       background:#fde9ee url("bg.jpeg") center/cover fixed no-repeat;

@@ -40,7 +40,8 @@
     --hand:"Caveat",cursive;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  html::-webkit-scrollbar{display:none}
   body{
     background-color:var(--cream);
     background-image:url("bg.jpeg");
@@ -285,8 +286,7 @@
   }
 
   /* ch5 dark */
-  .ch5{min-height:860px;background-color:#9f1239;color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
-  #chapter-5>video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
+  .ch5{min-height:860px;background-color:#9f1239;background-image:url("morgans.jpg");background-size:cover;background-position:center;background-repeat:no-repeat;color:var(--cream);position:relative;overflow:hidden;display:flex;align-items:center}
   .ch5::before{content:"";position:absolute;inset:0;z-index:1;background:
     linear-gradient(90deg,rgba(35,17,15,.8),rgba(48,25,21,.7) 55%,rgba(38,18,16,.84)),
     linear-gradient(180deg,rgba(35,17,15,.22),rgba(35,17,15,.52))}
@@ -636,9 +636,6 @@
 
 <!-- CHAPTER V -->
 <section id="chapter-5" class="chapter ch5">
-  <video autoplay muted loop playsinline preload="metadata" poster="bg.jpeg" aria-hidden="true">
-    <source src="rain (2).mp4" type="video/mp4">
-  </video>
   <div class="wrap">
     <div class="kicker reveal" style="justify-content:center;color:var(--gold-soft)"><span class="rule"></span><span class="name">Good to Know</span><span class="rule"></span></div>
     <h2 class="display reveal d1" style="margin-inline:auto;text-align:center">Before You Join <em>the Flock</em></h2>
