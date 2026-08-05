@@ -77,6 +77,9 @@
       .table-card{padding:16px;border-radius:14px}
       .table-heading{align-items:start;flex-direction:column;gap:7px}
       th,td{padding-top:12px;padding-bottom:12px;font-size:12px}
+      table,thead,tbody,tr,th,td{display:block;width:100%}
+      thead th:last-child{display:none}
+      th+th,td+td{padding-left:0}
       .foot-inner{flex-direction:column;text-align:center}
       .foot .details{text-align:center}
     }
@@ -102,7 +105,6 @@
       </div>
       <div class="table-scroll">
         <table>
-          <thead><tr><th>Guest Names</th><th>Guest Names</th></tr></thead>
           <tbody>
             <tr><td>Puneet &amp; Shweta</td><td>Hemant &amp; Jyoti</td></tr>
             <tr><td>Kids</td><td>Kunal &amp; Kanchan</td></tr>
